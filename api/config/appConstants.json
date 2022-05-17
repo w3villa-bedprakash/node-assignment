@@ -1,0 +1,9 @@
+{
+    "SUCCESS": "Success",
+    "ACTION_COMPLETE": true,
+    "ERROR_IN_EXECUTION": false,
+    "DEFAULT_SUCCESS_STATUS": 200,
+    "INTERNAL_SERVER_ERROR_STATUS_CODE": 500,
+    "ERROR": "ERROR",
+    "SLAB": [50, 100]
+}

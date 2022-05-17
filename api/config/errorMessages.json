@@ -1,0 +1,5 @@
+{
+    "unableToCalculateRewards": "Error Unable to calculate rewards",
+    "missingParams": "Error Parameter missing",
+    "invalidAmount": "Error Invalid amount"
+}
