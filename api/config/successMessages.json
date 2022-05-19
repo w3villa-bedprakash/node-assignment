@@ -1,3 +1,5 @@
 {
-    "rewardsCalculatedSuccessfully": "Rewards calculated successfully"
+    "rewardsCalculatedSuccessfully": "Rewards calculated successfully",
+    "userListFoundSuccessfully": "User list found successfully",
+    "transactionSuccessfullyCreated": "Transaction successfully created"
 }

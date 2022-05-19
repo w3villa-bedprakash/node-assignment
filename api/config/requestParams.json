@@ -1,5 +1,9 @@
 {
     "calculateRewards": [
         "amount"
+    ],
+    "createTransaction": [
+        "amount",
+        "user_id"
     ]
 }
