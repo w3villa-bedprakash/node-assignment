@@ -11,4 +11,4 @@
 5) Execute command `npm run` to start application
 
 This is the transaction list table
-![alt text]([http://url/to/img.png](https://github.com/w3villa-bedprakash/node-assignment/blob/master/views/data-format.png))
+![alt text]([http://url/to/img.png](https://github.com/w3villa-bedprakash/node-assignment/blob/master/views/data-format.png?raw=true))
