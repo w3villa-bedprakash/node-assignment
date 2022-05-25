@@ -4,6 +4,12 @@ const errorMessages = require('../config/errorMessages.json');
 const requestParamsHandler = require('../handlers/requestParams');
 const requestParams = require('../config/requestParams.json');
 const appConstants = require('../config/appConstants.json');
+
+/**
+ * @description calculate rewards points for an specific amount
+ * @param {number} amount
+ * @returns {object} response message and reward points for given amount
+ */
 module.exports.calculateRewards = async function (req, res) {
     const paramKeys = Object.keys(req.body);
     try {

@@ -1,7 +1,7 @@
 {
-    "unableToCalculateRewards": "Error Unable to calculate rewards",
-    "missingParams": "Error Parameter missing",
-    "invalidAmount": "Error Invalid amount",
-    "userNotFound": "Error User not found",
-    "unableToCreateTransaction": "Error Unable to create transaction"
+    "unableToCalculateRewards": "Error Unable to calculate rewards.",
+    "missingParams": "Error Parameter missing.",
+    "invalidAmount": "Error Invalid amount.",
+    "userNotFound": "Error User not found.",
+    "unableToCreateTransaction": "Error Unable to create transaction."
 }

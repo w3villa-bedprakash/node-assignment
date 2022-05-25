@@ -10,6 +10,11 @@ const Transactions = mongoose.model('transactions');
 const moment = require('moment');
 const _ = require('lodash')
 
+/**
+ * @description Months wise total spend and rewards point of user.
+ * @param {}
+ * @returns {object} Total spent and rewards points of each months.
+ */
 module.exports.getTransactions = async function (req, res) {
     try {
         Users.aggregate([{
@@ -43,7 +48,7 @@ module.exports.getTransactions = async function (req, res) {
                     }
                 }
             }
-            return responses.actionCompleteResponse(res, req, successMessages.rewardsCalculatedSuccessfully, tnxData);
+            return responses.actionCompleteResponse(res, req, successMessages.transactionFoundSuccessfully, tnxData);
         });
 
     } catch (err) {
@@ -52,7 +57,50 @@ module.exports.getTransactions = async function (req, res) {
     }
 }
 
+/**
+ * @description All transaction of the system
+ * @param {}
+ * @returns {object} All transaction of the system
+ */
+module.exports.getAllTransactions = async function (req, res) {
+    try {
+        Users.aggregate([{
+            $lookup: {
+                from: "transactions",
+                localField: "_id",
+                foreignField: "user_id",
+                as: "transactions"
+            }
+        }]).exec(function (err, data) {
+            let tnxData = []
+            let name = '';
+            for (let i = 0; i < data.length; i++) {
+                name = (data[i].firstName || '') + ((data[i].firstName && data[i].lastName) ? (' ' + data[i].lastName) : '');
+                for (let j = 0; j < data[i].transactions.length; j++) {
+                    tnxData.push({
+                        Name: name,
+                        Amount: data[i].transactions[j].amount,
+                        date: data[i].transactions[j].createdAt
 
+                    })
+
+                }
+            }
+            return responses.actionCompleteResponse(res, req, successMessages.transactionFoundSuccessfully, tnxData);
+        });
+
+    } catch (err) {
+        console.log("err: ", err)
+        return responses.sendError(res, req, err);
+    }
+}
+
+/**
+ * @description Create new transaction
+ * @param {number} amount
+ * @param {id} user_id
+ * @returns {object} execution status.
+ */
 module.exports.createTransaction = async function (req, res) {
     try {
         const paramKeys = Object.keys(req.body);

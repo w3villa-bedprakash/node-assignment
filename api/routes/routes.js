@@ -17,6 +17,10 @@ router
     .get(transactionsController.getTransactions);
 
 router
+    .route('/get-all-transactions')
+    .get(transactionsController.getAllTransactions);
+
+router
     .route('/transaction')
     .post(transactionsController.createTransaction);
 
