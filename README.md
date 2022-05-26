@@ -12,8 +12,10 @@
 5) Execute command `npm run` to start application.
 
 This is the month-wise transaction list table.
+
 ![img](https://github.com/w3villa-bedprakash/node-assignment/blob/master/views/data-format.png)
 
-This is the all transactions list.
+This is the all transactions list
+
 ![img](https://github.com/w3villa-bedprakash/node-assignment/blob/master/views/transactions.png)
 
